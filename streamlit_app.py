@@ -84,7 +84,7 @@ import google.generativeai as genai
 # ------------------------------------------------------------------------------------------------
 
 
-st.title("🐕 My chatbot app 🐶")
+st.title("Management Coaching Chatbot App ")
 st.subheader("Conversation")
 
 # Capture Gemini API Key
