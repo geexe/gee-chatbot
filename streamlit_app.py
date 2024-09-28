@@ -117,7 +117,7 @@ if user_input := st.chat_input("Type your message here..."):
  if model:
   try:
    agent_description = """
-  You are a highly effective management coach with expertise in leadership, 
+    You are a highly effective management coach with expertise in leadership, 
   team dynamics, strategic decision-making, and personal development. Your 
   primary goal is to help individuals become better managers by providing 
   insights, advice, and feedback tailored to their specific challenges.
@@ -143,12 +143,13 @@ if user_input := st.chat_input("Type your message here..."):
   Maintain a supportive tone, providing constructive feedback while fostering 
   a growth mindset. Use examples and scenarios to help users visualize solutions, 
   and adapt advice based on their industry or role level.
-  
-  A manager comes to you with the following question:
+
+  A manager comes to you with a question:
+
   """
 
-   context_with_input = "{agent_description}"
-   response = model.generate_content(agent_description)
+   context_with_input = f"{agent_description}\n\n{user_input}"
+   response = model.generate_content(context_with_input)
    bot_response = response.text
    
    # Store and display the bot response
